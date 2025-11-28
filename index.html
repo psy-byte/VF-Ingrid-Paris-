@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ingrid-Paris.fr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Massage et soins beauté à domicile exclusivement pour femmes à Paris. Détente, élégance et bien-être par Ingrid Paris.">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- ✅ Loader -->
+  <div id="loader" class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <nav class="header-nav">
+      <ul class="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#reservation">Réservation</a></li>
+        <li><a href="indexcontact1.html" target="_blank">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>INGRID PARIS</h1>
+      <p class="slogan">Une femme élégante est une femme détendue...</p>
+      <a href="#reservation" class="cta-button">Réserver maintenant</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Intro Section -->
+    <section class="intro-section container">
+      <h2>Bonjour à toutes!</h2>
+      <div class="intro-content">
+        <p class="intro-highlight">
+          <strong>Depuis 20 ans dans le monde du bien être et des massages, grâces aux enseignements de Manucures, Esthéticiennes et Masseurs rencontrés sur mon parcours et lors de mes voyages, je vous apporte un service de qualité à votre domicile ou en entreprise.</strong>
+        </p>
+
+        <hr class="intro-divider">
+
+        <blockquote class="care-quote">
+          Des moments privilégiés pour se reconnecter à son essence, se recentrer sur ses aspirations profondes, et cultiver une harmonie intérieure.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+      <h2>Mes Services de Massage et Soins</h2>
+      <div class="service-grid"></div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="container">
+      <h2>Tarifs</h2>
+      <div class="pricing-grid"></div>
+    </section>
+
+    <!-- Réservation Section -->
+    <section id="reservation" class="container">
+      <h2>Réservation</h2>
+      <form id="reservation-form">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Adresse</label>
+          <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Sélectionnez une date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label>Créneaux disponibles</label>
+          <div id="timeSlots"></div>
+        </div>
+        <div class="form-group">
+          <label for="category">Catégorie de service</label>
+          <select id="category" name="category" required>
+            <option value="">Choisissez une catégorie</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="">Choisissez un service</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="option">Durée et prix</label>
+          <select id="option" name="option" required>
+            <option value="">Choisissez une option</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="infoRequest">Informations et demandes supplémentaires</label>
+          <textarea id="infoRequest" name="infoRequest" rows="4"></textarea>
+        </div>
+        <div class="button-container">
+          <button type="submit" class="cta-button">Confirmer la réservation</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-description"></div>
+      <p id="modal-duration"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-section">
+          <ul>
+            <li><a href="indexcontact1.html" target="_blank">Contact</a></li>
+            <li><a href="indexmention" target="_blank">Mentions légales</a></li>
+            <li><a href="indexcgvip.html" target="_blank">CGV</a></li>
+            <li><a href="indexfaq.html" target="_blank">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Ingrid Paris - Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ Bouton Retour Haut -->
+  <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de la page">↑</button>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

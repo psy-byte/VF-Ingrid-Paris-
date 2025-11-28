@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Page des services -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/services</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page des tarifs -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/tarifs</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page de réservation -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/reservation</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Page de contact -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/indexcontact.html</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Page des mentions légales -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/indexmlip.html</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Page des CGV -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/indexcgvip.html</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Page des FAQ -->
+  <url>
+    <loc>https://www.ingrid-paris.fr/indexfaq.html</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

@@ -1,0 +1,944 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #502c3e;
+  --secondary-color: rgba(255, 255, 255, 0.8);
+  --text-color: #4a303e;
+  --text-color-light: #ffffff;
+  --background-light: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.4);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #502c3e;
+  
+  Utilise la couleur primaire de votre site 
+  
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Base Styles */
+body {
+  background-image: url("https://github.com/psy-byte/IC-V3/blob/main/dark.jpg?raw=true");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: "Playfair Display", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--background-light);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.hero {
+  background-image: url("https://github.com/psy-byte/IC-V3/blob/main/dark.jpg?raw=true");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color-light);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.header-nav {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--secondary-color);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuster les styles pour les petits écrans */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu li {
+    margin: 5px 10px;
+  }
+
+  .logo {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    justify-content: flex-start;
+    padding-top: 60px; /* Ajustez cette valeur selon vos besoins */
+  }
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-style: italic;
+  opacity: 0.8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: var(--text-color-light);
+  margin-bottom: 50px;
+}
+
+.hero nav {
+  display: flex-end;
+  justify-content: flex;
+  align-items: center; /* Aligne verticalement les éléments */
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: var(--transition);
+  margin-top: 100px;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Intro Section */
+.intro-section {
+  font-family: "Playfair Display", serif;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.intro-highlight {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.care-description {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.care-description h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 30px 0 20px;
+  text-align: center;
+}
+
+.care-description p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.care-benefits {
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.care-benefits li {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Fond transparent pour les éléments de la liste */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.care-benefits li:hover {
+  transform: translateY(-5px);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Légèrement plus opaque au survol */
+}
+
+.care-benefits strong {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.care-evolution {
+  font-style: italic;
+  background-color: rgba(74, 48, 62, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--primary-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 20px 20px 20px 30px;
+  margin: 30px 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Fond transparent pour la citation */
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 25px;
+  }
+
+  .intro-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .intro-highlight {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .care-description h3 {
+    font-size: 1.7rem;
+  }
+
+  .care-benefits li {
+    padding: 15px;
+    font-weight: bold;
+  }
+
+  blockquote {
+    font-size: 1rem;
+    padding: 15px 15px 15px 25px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 25px;
+  }
+
+  .intro-section h2 {
+    font-size: 2rem;
+  }
+
+  .intro-highlight {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .care-description h3 {
+    font-size: 1.7rem;
+  }
+
+  .care-benefits li {
+    padding: 15px;
+  }
+
+  blockquote {
+    font-size: 1rem;
+    padding: 15px 15px 15px 25px;
+  }
+}
+
+/* Services Section */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 20px;
+}
+
+.service {
+  background-color: var(--background-light);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin: 10px;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.service p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.read-more:hover {
+  background-color: var(--text-color-light);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Tarifs Section */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.pricing-category {
+  background-color: var(--background-light);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.pricing-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-category h3 {
+  font-family: "playfair display", serif;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 12px;
+  text-align: center;
+  border: none;
+}
+
+.pricing-table th {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  font-weight: 700;
+}
+
+.pricing-table td:first-child {
+  font-weight: 700;
+  text-align: left;
+}
+
+.pricing-table td:last-child {
+  font-weight: 700;
+}
+
+.pricing-table td:nth-child(2) {
+  font-weight: normal;
+}
+
+.pricing-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-note {
+  font-size: 0.9em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #666;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#modal-description {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+#modal-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+#modal-description::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#modal-description::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#modal-description::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  background-color: #fefefe;
+  padding: 0 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Styles existants du formulaire de réservation */
+#reservation-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+#reservation-form .form-group {
+  margin-bottom: 15px;
+}
+
+#reservation-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#reservation-form input,
+#reservation-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#reservation-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+}
+
+#reservation-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+#timeSlots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#timeSlots button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#timeSlots button.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Augmenté pour plus d'espace au-dessus du bouton */
+}
+
+#reservation-form .cta-button {
+  /* ... autres styles ... */
+  padding: 15px 30px; /* Augmenté pour un bouton plus grand */
+  font-size: 18px; /* Augmenté pour un texte plus grand */
+}
+/* Styles pour le pied de page */
+footer {
+  background-color: #502c3e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-banner {
+  background-color: #4a303e;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+/* Assurez-vous que le footer est toujours en bas de la page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Style spécifique pour la section des liens importants */
+.footer-section:nth-child(2) {
+  flex: 2; /* Donne plus d'espace à cette section */
+}
+
+.footer-section h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-section ul li {
+  margin: 0 10px 5px; /* Espacement horizontal et un peu vertical */
+}
+
+.footer-section a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1rem;
+  white-space: nowrap; /* Empêche le retour à la ligne du texte */
+}
+
+.footer-section a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* ... le reste du CSS reste identique jusqu'aux media queries ... */
+
+/* Regroupement de tous les Media Queries */
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu li {
+    margin: 5px 10px;
+  }
+
+  .logo {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    justify-content: flex-start;
+    padding-top: 60px;
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: 25px;
+  }
+
+  .intro-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .intro-highlight {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .care-description h3 {
+    font-size: 1.7rem;
+  }
+
+  .care-benefits li {
+    padding: 15px;
+    font-weight: bold;
+  }
+
+  blockquote {
+    font-size: 1rem;
+    padding: 15px 15px 15px 25px;
+    font-weight: bold;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section ul li {
+    margin: 10px 0;
+  }
+
+  .footer-section ul li:not(:last-child)::after {
+    display: none; /* Cache les séparateurs sur mobile */
+  }
+}
+
+/* Separators for footer links (non-mobile) */
+.footer-section ul li:not(:last-child)::after {
+  content: "|";
+  color: var(--secondary-color);
+  margin-left: 15px;
+  opacity: 0.5;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+// Ajouts CSS nécessaires (à ajouter au fichier CSS)
+`
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-error {
+  background: #fee;
+  border-left: 4px solid #c00;
+}
+
+.notification-success {
+  background: #efe;
+  border-left: 4px solid #0c0;
+}
+
+.notification-info {
+  background: #eef;
+  border-left: 4px solid #00c;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles de validation du formulaire */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #c00;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: #0c0;
+}
+`

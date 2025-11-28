@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>faqipvf</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Ingrid Paris</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-image: url("https://github.com/psy-byte/IC-V3/blob/main/dark.jpg?raw=true");
+      background-size: cover;
+      background-position: center;
+      height: 20vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      position: relative;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5em;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .slogan {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-style: italic;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2em;
+      color: #502c3e;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 30px;
+    }
+
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3em;
+      color: #502c3e;
+      font-weight: 600;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      padding-left: 20px;
+      border-left: 2px solid #502c3e;
+      display: none;
+    }
+
+    footer {
+      background-color: #502c3e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-content">
+      <h1>INGRID PARIS</h1>
+      <p class="slogan">Une femme élégante est une femme détendue...</p>
+    </div>
+  </div>
+  <div class="content">
+    <h2>Foire Aux Questions (FAQ)</h2>
+    <input type="text" id="faq-search" placeholder="Rechercher une question...">
+
+    <div class="faq-item">
+      <div class="faq-question">Comment fonctionne le service de réservation en ligne ?</div>
+      <div class="faq-answer">Notre service de réservation en ligne vous permet de choisir le type de prestation, la date, l'heure et le lieu qui vous conviennent. Une fois votre choix effectué, vous recevrez une confirmation par email et SMS.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quels types de prestations proposez-vous ?</div>
+      <div class="faq-answer">Nous proposons une variété de services de beauté et de bien-être à domicile, incluant des massages, des soins du visage, des manucures, des pédicures, et plus encore. Consultez notre site pour la liste complète des prestations disponibles.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Comment puis-je payer pour les services ?</div>
+      <div class="faq-answer">Le paiement se fait par virement ou par chèque ou en especes. Veuillez consulter nos CGVpour plus d'informations.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quelle est votre politique d'annulation ?</div>
+      <div class="faq-answer">Vous pouvez annuler ou modifier votre réservation sans frais jusqu'à 24 heures avant l'heure prévue du rendez-vous. Pour les annulations tardives (moins de 24 heures avant le rendez-vous), des frais peuvent s'appliquer. Consultez nos conditions générales pour plus de détails.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Que dois-je préparer pour ma séance à domicile ?</div>
+      <div class="faq-answer">Pour une séance optimale, assurez-vous d'avoir un espace calme et propre. Pour les massages, préparez une serviette propre et une table de massage si vous en avez une. Si n'en avez pas, nous vous en fournirons une sur demande dans la rubrique commentaire du formulaire de réservation ou par téléphone. Pour les autres soins, tout le matériel nécessaire est fourni par Ingrid Paris.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Proposez-vous des forfaits ou des abonnements ?</div>
+      <div class="faq-answer">Oui, nous proposons différents forfaits et abonnements qui peuvent vous faire bénéficier de tarifs avantageux. Consultez notre page de tarifs pour plus d'informations sur nos offres actuelles.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Comment puis-je contacter le service client ?</div>
+      <div class="faq-answer">Vous pouvez nous contacter par email à contact@ingrid-paris.fr ou par téléphone au numéro indiqué sur notre site du lundi au dimanche de 9h à 19h pour répondre à toutes vos questions.</div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Ingrid Paris - Tous droits réservés.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fonction pour filtrer les questions de la FAQ
+      function filterFAQ() {
+        var input = document.getElementById("faq-search");
+        var filter = input.value.toUpperCase();
+        var faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach(function(item) {
+          var question = item.querySelector(".faq-question").textContent;
+          if (question.toUpperCase().indexOf(filter) > -1) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+      // Créer et ajouter la barre de recherche
+      var searchBar = document.getElementById("faq-search");
+      searchBar.addEventListener("keyup", filterFAQ);
+      // Fonction pour basculer l'affichage des réponses
+      function toggleAnswer() {
+        this.classList.toggle("active");
+        var answer = this.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      }
+      // Ajouter l'événement de clic à chaque question
+      document.querySelectorAll(".faq-item .faq-question").forEach(function(question) {
+        question.addEventListener("click", toggleAnswer);
+      });
+    });
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>

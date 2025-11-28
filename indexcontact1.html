@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Carte de visite Last VF</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingrid Paris - Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Playfair Display', serif;
+      padding: 10px;
+    }
+
+    .card-container {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      min-height: 400px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      padding-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      background-image: url('https://github.com/psy-byte/Carte-de-visite-Ingrid-Paris/raw/main/Ingriddarkard%20.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .main-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding-top: 20px;
+    }
+
+    .name {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 500;
+      text-shadow: var(--text-shadow);
+      letter-spacing: 2px;
+    }
+
+    .slogan {
+      font-style: italic;
+      font-size: clamp(14px, 2.5vw, 22px);
+      margin-top: 10px;
+      text-shadow: var(--text-shadow);
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-info {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: clamp(14px, 2.5vw, 22px);
+      text-shadow: var(--text-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #f8e0e0;
+      transform: translateY(-2px);
+    }
+
+    .contact-info a:active {
+      transform: translateY(1px);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 4vw, 30px);
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px;
+    }
+
+    .social-icons a i {
+      font-size: clamp(18px, 3vw, 26px);
+      text-shadow: var(--text-shadow);
+    }
+
+    .social-icons a span {
+      font-size: clamp(14px, 2.2vw, 18px);
+      text-shadow: var(--text-shadow);
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      color: #f8e0e0;
+    }
+
+    .exclusive-note {
+      text-align: center;
+      font-style: italic;
+      font-size: clamp(12px, 1.8vw, 16px);
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 10px;
+      margin-top: 15px;
+      text-shadow: var(--text-shadow);
+    }
+
+    /* Effet de hover pour indiquer que c'est cliquable */
+    .contact-info a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 50%;
+      background-color: white;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .contact-info a:hover::after {
+      width: 60%;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        min-height: 450px;
+        padding: 20px;
+        padding-bottom: 25px;
+        gap: 15px;
+      }
+      
+      .contact-info a {
+        margin: 8px 0;
+      }
+      
+      .main-content {
+        padding-top: 10px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .card {
+        min-height: 350px;
+        padding: 25px;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: white;
+      }
+      
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .card::before {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      
+      /* Afficher les liens en texte normal à l'impression */
+      .contact-info a::after {
+        display: none;
+      }
+      
+      /* Afficher les URLs complètes pour l'impression */
+      .contact-info a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .contact-info a:hover,
+      .social-icons a:hover {
+        transform: none;
+      }
+      
+      .contact-info a:hover::after {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <div class="main-content">
+        <div class="name">INGRID PARIS</div>
+        <div class="slogan">Une femme élégante est une femme détendue...</div>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+33659824432" aria-label="Appeler Ingrid Paris">
+          ☎ +33 6 59 82 44 32
+        </a>
+        <a href="mailto:contact@ingrid-paris.fr" aria-label="Envoyer un email à Ingrid Paris">
+          ✉ contact@ingrid-paris.fr
+        </a>
+        <a href="https://www.ingrid-paris.fr" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site web d'Ingrid Paris">
+          ◉ www.ingrid-paris.fr
+        </a>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/ingrid_paris_" target="_blank" rel="noopener noreferrer" aria-label="Instagram d'Ingrid Paris">
+            <i class="fab fa-instagram"></i>
+            <span>ingrid_paris_</span>
+          </a>
+        </div>
+      </div>
+      <div class="exclusive-note">Services exclusivement réservés aux femmes.</div>
+    </div>
+  </div>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
